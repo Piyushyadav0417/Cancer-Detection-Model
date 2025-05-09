@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="{% static 'model_1.css' %}">
+  <title>Model One Overview - OralScan AI</title>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">OralScan AI</div>
+    <a href="{% url "home_page" %}" class="modal-btn">Back to Home</a>
+  </header>
+
+  <section class="model-detail">
+    <div class="glass-card">
+      <h1>Model One Overview</h1>
+      <p>This model was trained on a large dataset with the help of Patch Shuffle and CutMix techniques for data augmentation. It achieved an accuracy of 89.73% after 20 epochs.</p>
+      <p>Key Features:</p>
+      <ul>
+        <li>Trained using VGG16 architecture</li>
+        <li>Data augmentation using Patch Shuffle and CutMix</li>
+        <li>Generates heatmaps for XAI interpretation</li>
+        <li>Model achieved convergence and accuracy of 89.73%</li>
+      </ul>
+    </div>
+  </section>
+
+</body>
+</html>

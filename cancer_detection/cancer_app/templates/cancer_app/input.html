@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="{% static 'input.css' %}">
+  <title>Begin Diagnosis - OralScan AI</title>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">OralScan AI</div>
+    <a href="{% url "home_page" %}" class="modal-btn">Back to Home</a>
+  </header>
+
+  <section class="input-section">
+    <div class="glass-card">
+      <h1>Upload Image for Analysis</h1>
+      <p>Select an image and choose the model to begin your diagnosis.</p>
+      <form action="{% url 'predict_view' %}" method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+        <label for="imageUpload">Upload Image:</label>
+        <input type="file" name="image" id="imageUpload" required><br><br>
+
+        <label for="modelSelect">Choose Model:</label>
+        <select name="model" id="modelSelect">
+          <option value="model1">Model One (Large Dataset)</option>
+          <option value="model2">Model Two (Lightweight)</option>
+        </select><br><br>
+
+        <button type="submit" class="btn primary">Submit for Analysis</button>
+      </form>
+    </div>
+  </section>
+
+</body>
+</html>

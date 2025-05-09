@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="{% static 'result.css' %}">
+  <title>Diagnosis Result - OralScan AI</title>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">OralScan AI</div>
+        <a href="{% url "clear_and_home" %}" class="modal-btn">Back to Home</a>
+
+    </header>
+    <section class="result-section">
+        <div class="glass-card">
+          <h1>Diagnosis Result</h1>
+          <p>Your image has been analyzed. Below is the prediction result along with a heatmap.</p>
+    
+{% if output_image_url %}
+    <h2>Prediction Result</h2>
+    <div class="result-img">
+        <img src="{{ output_image_url }}" alt="Prediction Result">
+    </div>
+    <a href="{{ output_image_url }}" download class="btn primary">Download Result</a>
+{% else %}
+    <p>No result available.</p>
+{% endif %}
+
+</div>
+</section>
+ 
+</body>
+</html>

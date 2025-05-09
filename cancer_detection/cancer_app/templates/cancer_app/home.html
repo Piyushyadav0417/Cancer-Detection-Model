@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="{% static 'home.css' %}">
+  <title>OralScan AI</title>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">OralScan AI</div>
+    <button class="modal-btn" onclick="openModal()">Team & Supervisor</button>
+  </header>
+
+  <section class="hero">
+    <div class="glass-card">
+      <h1>Detecting Oral Cancer with Precision</h1>
+      <p>This web app uses two Deep Learning models trained on enhanced datasets with patch shuffle and cutmix augmentation. It visualizes predictions using XAI heatmaps.</p>
+      <div class="button-group">
+        <a href="{% url "model1_page" %}" class="btn">Model One Overview</a>
+        <a href="{% url "model2_page" %}" class="btn">Model Two Overview</a>
+        <a href="{% url "predict_view" %}" class="btn primary">Begin Diagnosis</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 <strong>OralScan AI</strong> | JNCT College | Powered by <strong>DeepVision Lab</strong>
+  </footer>
+  
+
+  <!-- Modal -->
+  <div class="modal" id="teamModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Project Team & Supervisor</h2>
+      <p><strong>Under the supervision of:</strong><br>Prof. Pankaj Pandey (HOD, CSE)</p>
+      <p><strong>Team Members:</strong></p>
+      <ul>
+        <li><strong>Piyush Yadav:</strong> Frontend & Backend (Django)</li>
+        <li><strong>Nabeel Ahmed:</strong> Deep Learning & UI Design</li>
+        <li><strong>Priyanshu Namdev:</strong> Dataset Collection & Preparation</li>
+        <li><strong>Mohammad Sarfraz Khan:</strong> Testing & Documentation</li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <script>
+    function openModal() {
+      document.getElementById("teamModal").style.display = "flex";
+    }
+    function closeModal() {
+      document.getElementById("teamModal").style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target == document.getElementById("teamModal")) {
+        closeModal();
+      }
+    }
+  </script>
+
+</body>
+</html>

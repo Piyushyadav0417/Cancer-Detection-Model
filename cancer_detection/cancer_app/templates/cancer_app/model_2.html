@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="{% static 'model_2.css' %}">
+  <title>Model Two Overview - OralScan AI</title>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">OralScan AI</div>
+    <a href="{% url "home_page" %}" class="modal-btn">Back to Home</a>
+
+  </header>
+
+  <section class="model-detail">
+    <div class="glass-card">
+      <h1>Model Two Overview</h1>
+      <p>This lightweight model was trained on a smaller dataset and employs Patch Augmentation for better accuracy in oral cancer detection.</p>
+      <p>Key Features:</p>
+      <ul>
+        <li>Trained with fewer data but achieves 87.54% accuracy</li>
+        <li>Employs Patch Augmentation technique</li>
+        <li>Fast and lightweight for practical applications</li>
+        <li>Reliable prediction with fast inference time</li>
+      </ul>
+    </div>
+  </section>
+
+</body>
+</html>
